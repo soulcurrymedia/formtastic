@@ -32,7 +32,7 @@ module Formtastic
       include Base
       
       def input_html_options
-        super.merge(:required => nil).merge(:autofocus => nil)
+        options.slice(:value).merge(super).merge(:required => nil).merge(:autofocus => nil)
       end
       
       def to_html
